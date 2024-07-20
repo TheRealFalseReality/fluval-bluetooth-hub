@@ -1,5 +1,5 @@
 substitutions:
-    mac_address: '00:00:00:00:00:00'
+    mac_address_marine: '00:00:00:00:00:00'
 
 esp32_ble_tracker:
 
@@ -12,7 +12,7 @@ external_components:
     components: [ fluval_ble_led ]
 
 ble_client:
-  - mac_address: ${mac_address}
+  - mac_address: ${mac_address_marine}
     id: ble_fluval_marine
 
 fluval_ble_led:
