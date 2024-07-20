@@ -47,16 +47,19 @@ button:
     fluval_ble_led_id: fluval_planted
     mode: "MANUAL"
     name: "Planted - Switch to Manual"
+    icon: mdi:lightbulb-alert
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "AUTO"
     name: "Planted - Switch to Auto"
+    icon: mdi:lightbulb-auto
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "PRO"
     name: "Planted - Switch to Pro"
+    icon: mdi:lightbulb-on
 
 switch:
   - platform: ble_client
@@ -67,6 +70,8 @@ switch:
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     name: "Planted Fluval Light"
+    restore_mode: RESTORE_DEFAULT_ON
+    icon: mdi:led-strip
 
 text_sensor:
   - platform: fluval_ble_led
@@ -75,6 +80,7 @@ text_sensor:
     mapping_auto: "Auto"
     mapping_pro: "Pro"
     name: "Planted Fluval Light Mode"
+    icon: mdi:lightbulb-group
 
 number:
   - platform: fluval_ble_led
