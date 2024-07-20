@@ -1,0 +1,118 @@
+esp32_ble_tracker:
+
+time:
+  - platform: homeassistant
+    id: ha_time
+
+external_components:
+  - source: github://mrzottel/esphome@fluval_ble_led
+    components: [ fluval_ble_led ]
+
+ble_client:
+  - mac_address: 44:A6:E5:68:DA:E9
+    id: ble_fluval1
+
+fluval_ble_led:
+  - ble_client_id: ble_fluval1
+    time_id: ha_time
+    number_of_channels: 5
+    id: fluval_1
+
+sensor:
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    channel: 1
+    zero_if_off: true
+    name: "Pink"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    channel: 2
+    zero_if_off: true
+    name: "Cyan"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    channel: 3
+    zero_if_off: true
+    name: "Blue"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    channel: 4
+    zero_if_off: true
+    name: "Purple"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    channel: 5
+    zero_if_off: true
+    name: "Cold White"
+
+button:    
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    mode: "MANUAL"
+    name: "Switch to Manual"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    mode: "AUTO"
+    name: "Switch to Auto"
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    mode: "PRO"
+    name: "Switch to Pro"
+
+switch:
+  - platform: ble_client
+    ble_client_id: ble_fluval1
+    name: "Marine Fluval Connection"
+    restore_mode: RESTORE_DEFAULT_ON
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Marine Main Light"
+
+text_sensor:
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    mapping_manual: "Manual"
+    mapping_auto: "Auto"
+    mapping_pro: "Pro"
+    name: "Marine Main Light Mode"
+
+number:
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Pink"
+    channel: 1
+    zero_if_off: true
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Cyan"
+    channel: 2
+    zero_if_off: true
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Blue"
+    channel: 3
+    zero_if_off: true
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Purple"
+    channel: 4
+    zero_if_off: true
+
+  - platform: fluval_ble_led
+    fluval_ble_led_id: fluval_1
+    name: "Cold White"
+    channel: 5
+    # max_value: 500
+    # min_value: 200
+    # step: 50
+    zero_if_off: true
