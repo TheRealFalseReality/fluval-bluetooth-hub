@@ -1,5 +1,4 @@
 substitutions:
-  app_version: "1"
   comment: "Fluval Bluetooth Hub"
   logger: "DEBUG"
   
