@@ -7,6 +7,6 @@ substitutions:
 
 packages:
   device_base: !include common/device_base.yaml
-  fluval: !include common/fluval_bluetooth.yaml
+  fluval_marine: !include common/fluval_bluetooth_marine.yaml
 
 web_server: !remove

@@ -1,3 +1,6 @@
+substitutions:
+    mac_address: ''
+
 esp32_ble_tracker:
 
 time:
@@ -9,108 +12,108 @@ external_components:
     components: [ fluval_ble_led ]
 
 ble_client:
-  - mac_address: 44:A6:E5:68:DA:E9
-    id: ble_fluval1
+  - mac_address: ${mac_address}
+    id: ble_fluval_marine
 
 fluval_ble_led:
-  - ble_client_id: ble_fluval1
+  - ble_client_id: ble_fluval_marine
     time_id: ha_time
     number_of_channels: 5
-    id: fluval_1
+    id: fluval_marine
 
 sensor:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     channel: 1
     zero_if_off: true
-    name: "Pink"
+    name: "Marine - Pink"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     channel: 2
     zero_if_off: true
-    name: "Cyan"
+    name: "Marine - Cyan"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     channel: 3
     zero_if_off: true
-    name: "Blue"
+    name: "Marine - Blue"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     channel: 4
     zero_if_off: true
-    name: "Purple"
+    name: "Marine - Purple"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     channel: 5
     zero_if_off: true
-    name: "Cold White"
+    name: "Marine - Cold White"
 
 button:    
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     mode: "MANUAL"
     name: "Switch to Manual"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     mode: "AUTO"
     name: "Switch to Auto"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     mode: "PRO"
     name: "Switch to Pro"
 
 switch:
   - platform: ble_client
-    ble_client_id: ble_fluval1
-    name: "Marine Fluval Connection"
+    ble_client_id: ble_fluval_marine
+    name: "Marine Bluetooth Connection"
     restore_mode: RESTORE_DEFAULT_ON
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Marine Main Light"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine Fluval Light"
 
 text_sensor:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
+    fluval_ble_led_id: fluval_marine
     mapping_manual: "Manual"
     mapping_auto: "Auto"
     mapping_pro: "Pro"
-    name: "Marine Main Light Mode"
+    name: "Marine Fluval Light Mode"
 
 number:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Pink"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine - Pink"
     channel: 1
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Cyan"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine - Cyan"
     channel: 2
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Blue"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine - Blue"
     channel: 3
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Purple"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine - Purple"
     channel: 4
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_1
-    name: "Cold White"
+    fluval_ble_led_id: fluval_marine
+    name: "Marine - Cold White"
     channel: 5
     # max_value: 500
     # min_value: 200
