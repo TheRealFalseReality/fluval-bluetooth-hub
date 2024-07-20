@@ -1,6 +1,5 @@
 substitutions:
   app_version: "1"
-  suffix: "true"
   comment: "Fluval Bluetooth Hub"
   logger: "DEBUG"
   
@@ -12,7 +11,7 @@ esphome:
   name: "${name}"
   friendly_name: "${friendly_name}"
   # Automatically add the mac address to the name
-  name_add_mac_suffix: ${suffix}
+  name_add_mac_suffix: true
   comment: "${comment}"
 
 esp32:
@@ -96,26 +95,6 @@ sensor:
     # Uptime sensor
   - platform: uptime
     name: Uptime 
-
-  # # of I2C devices connected
-  # - platform: template
-  #   name: "I2C Devices Connected"
-  #   id: i2c_devices
-  #   icon: mdi:integrated-circuit-chip
-  #   entity_category: "diagnostic"
-  #   disabled_by_default: true
-  #   lambda: |-
-  #     byte error, address;
-  #     int nDevices;
-  #     nDevices = 0;
-  #     for(address = 1; address < 127; address++) {
-  #       Wire.beginTransmission(address);
-  #       error = Wire.endTransmission();
-  #       if (error == 0) {
-  #         nDevices++;
-  #       }
-  #     }
-  #     return nDevices;
 
 binary_sensor:
   # API Status
