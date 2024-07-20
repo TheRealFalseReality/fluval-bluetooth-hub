@@ -1,5 +1,5 @@
 substitutions:
-    mac_address_marine: '00:00:00:00:00:00'
+  mac_address_marine: '00:00:00:00:00:00'
 
 ble_client:
   - mac_address: ${mac_address_marine}
@@ -46,17 +46,17 @@ button:
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     mode: "MANUAL"
-    name: "Switch to Manual"
+    name: "Marine - Switch to Manual"
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     mode: "AUTO"
-    name: "Switch to Auto"
+    name: "Marine - Switch to Auto"
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     mode: "PRO"
-    name: "Switch to Pro"
+    name: "Marine - Switch to Pro"
 
 switch:
   - platform: ble_client

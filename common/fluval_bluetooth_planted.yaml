@@ -1,5 +1,5 @@
 substitutions:
-    mac_address_planted: '00:00:00:00:00:00'
+  mac_address_planted: '00:00:00:00:00:00'
 
 ble_client:
   - mac_address: ${mac_address_planted}
@@ -46,17 +46,17 @@ button:
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "MANUAL"
-    name: "Switch to Manual"
+    name: "Planted - Switch to Manual"
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "AUTO"
-    name: "Switch to Auto"
+    name: "Planted - Switch to Auto"
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "PRO"
-    name: "Switch to Pro"
+    name: "Planted - Switch to Pro"
 
 switch:
   - platform: ble_client
