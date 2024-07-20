@@ -1,119 +1,109 @@
 substitutions:
-    mac_address: 'XX:XX:XX:XX:XX:XX'
-
-esp32_ble_tracker:
-
-time:
-  - platform: homeassistant
-    id: ha_time
-
-external_components:
-  - source: github://mrzottel/esphome@fluval_ble_led
-    components: [ fluval_ble_led ]
+    mac_address_planted: '00:00:00:00:00:00'
 
 ble_client:
-  - mac_address: ${mac_address}
-    id: ble_fluval_marine
+  - mac_address: ${mac_address_planted}
+    id: ble_fluval_planted
 
 fluval_ble_led:
-  - ble_client_id: ble_fluval_marine
+  - ble_client_id: ble_fluval_planted
     time_id: ha_time
     number_of_channels: 5
-    id: fluval_marine
+    id: fluval_planted
 
 sensor:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     channel: 1
     zero_if_off: true
-    name: "Marine - Pink"
+    name: "Planted - Pink"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     channel: 2
     zero_if_off: true
-    name: "Marine - Cyan"
+    name: "Planted - Blue"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     channel: 3
     zero_if_off: true
-    name: "Marine - Blue"
+    name: "Planted - Cold White"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     channel: 4
     zero_if_off: true
-    name: "Marine - Purple"
+    name: "Planted - Pure White"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     channel: 5
     zero_if_off: true
-    name: "Marine - Cold White"
+    name: "Planted - Warm White"
 
 button:    
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     mode: "MANUAL"
     name: "Switch to Manual"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     mode: "AUTO"
     name: "Switch to Auto"
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     mode: "PRO"
     name: "Switch to Pro"
 
 switch:
   - platform: ble_client
-    ble_client_id: ble_fluval_marine
-    name: "Marine Bluetooth Connection"
+    ble_client_id: ble_fluval_planted
+    name: "Planted Bluetooth Connection"
     restore_mode: RESTORE_DEFAULT_ON
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine Fluval Light"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted Fluval Light"
 
 text_sensor:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
+    fluval_ble_led_id: fluval_planted
     mapping_manual: "Manual"
     mapping_auto: "Auto"
     mapping_pro: "Pro"
-    name: "Marine Fluval Light Mode"
+    name: "Planted Fluval Light Mode"
 
 number:
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine - Pink"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted - Pink"
     channel: 1
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine - Cyan"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted - Blue"
     channel: 2
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine - Blue"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted - Cold White"
     channel: 3
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine - Purple"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted - Pure White"
     channel: 4
     zero_if_off: true
 
   - platform: fluval_ble_led
-    fluval_ble_led_id: fluval_marine
-    name: "Marine - Cold White"
+    fluval_ble_led_id: fluval_planted
+    name: "Planted - Warm White"
     channel: 5
     # max_value: 500
     # min_value: 200
