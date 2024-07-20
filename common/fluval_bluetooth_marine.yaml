@@ -1,16 +1,6 @@
 substitutions:
     mac_address_marine: '00:00:00:00:00:00'
 
-esp32_ble_tracker:
-
-time:
-  - platform: homeassistant
-    id: ha_time
-
-external_components:
-  - source: github://mrzottel/esphome@fluval_ble_led
-    components: [ fluval_ble_led ]
-
 ble_client:
   - mac_address: ${mac_address_marine}
     id: ble_fluval_marine

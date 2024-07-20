@@ -36,6 +36,16 @@ captive_portal:
 
 web_server:
 
+esp32_ble_tracker:
+
+time:
+  - platform: homeassistant
+    id: ha_time
+
+external_components:
+  - source: github://mrzottel/esphome@fluval_ble_led
+    components: [ fluval_ble_led ]
+
 # # Sets up Bluetooth LE (Only on ESP32) to allow the user to provision wifi credentials to the device.
 # esp32_improv:
 #   authorizer: none
