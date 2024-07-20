@@ -1,5 +1,5 @@
 substitutions:
-    mac_address: '00:00:00:00:00:00'
+    mac_address: 'XX:XX:XX:XX:XX:XX'
 
 esp32_ble_tracker:
 
