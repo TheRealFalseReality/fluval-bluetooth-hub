@@ -54,12 +54,12 @@ sensor:
     channel: 1
     zero_if_off: true
     name: "Planted - Pink"
-    id: planted_pink
+    id: fluval_planted_pink
     disabled_by_default: true
 
   - platform: copy
     name: Planted - Pink Brightness
-    source_id: planted_pink
+    source_id: fluval_planted_pink
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -73,12 +73,12 @@ sensor:
     channel: 2
     zero_if_off: true
     name: "Planted - Blue"
-    id: planted_blue
+    id: fluval_planted_blue
     disabled_by_default: true
 
   - platform: copy
     name: Planted - Blue Brightness
-    source_id: planted_blue
+    source_id: fluval_planted_blue
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -92,12 +92,12 @@ sensor:
     channel: 3
     zero_if_off: true
     name: "Planted - Cold White"
-    id: planted_cold_white
+    id: fluval_planted_cold_white
     disabled_by_default: true
 
   - platform: copy
     name: Planted - Cold White Brightness
-    source_id: planted_cold_white
+    source_id: fluval_planted_cold_white
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -111,12 +111,12 @@ sensor:
     channel: 4
     zero_if_off: true
     name: "Planted - Pure White"
-    id: planted_pure_white
+    id: fluval_planted_pure_white
     disabled_by_default: true
 
   - platform: copy
     name: Planted - Pure White Brightness
-    source_id: planted_pure_white
+    source_id: fluval_planted_pure_white
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -130,12 +130,12 @@ sensor:
     channel: 5
     zero_if_off: true
     name: "Planted - Warm White"
-    id: planted_warm_white
+    id: fluval_planted_warm_white
     disabled_by_default: true
 
   - platform: copy
     name: Planted - Warm White Brightness
-    source_id: planted_warm_white
+    source_id: fluval_planted_warm_white
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -190,27 +190,32 @@ number:
     name: "Planted - Pink"
     channel: 1
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     name: "Planted - Blue"
     channel: 2
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     name: "Planted - Cold White"
     channel: 3
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     name: "Planted - Pure White"
     channel: 4
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     name: "Planted - Warm White"
     channel: 5
     zero_if_off: true
+    step: 10

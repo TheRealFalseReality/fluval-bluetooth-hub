@@ -55,12 +55,12 @@ sensor:
     zero_if_off: true
     name: "Marine - Pink"
     icon: mdi:lightbulb-outline
-    id: marine_pink
+    id: fluval_marine_pink
     disabled_by_default: true
 
   - platform: copy
     name: Marine - Pink Brightness
-    source_id: marine_pink
+    source_id: fluval_marine_pink
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -75,12 +75,12 @@ sensor:
     zero_if_off: true
     name: "Marine - Cyan"
     icon: mdi:lightbulb-outline
-    id: marine_cyan
+    id: fluval_marine_cyan
     disabled_by_default: true
 
   - platform: copy
     name: Marine - Cyan Brightness
-    source_id: marine_cyan
+    source_id: fluval_marine_cyan
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -95,12 +95,12 @@ sensor:
     zero_if_off: true
     name: "Marine - Blue"
     icon: mdi:lightbulb-outline
-    id: marine_blue
+    id: fluval_marine_blue
     disabled_by_default: true
     
   - platform: copy
     name: Marine - Blue Brightness
-    source_id: marine_blue
+    source_id: fluval_marine_blue
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -115,12 +115,12 @@ sensor:
     zero_if_off: true
     name: "Marine - Purple"
     icon: mdi:lightbulb-outline
-    id: marine_purple
+    id: fluval_marine_purple
     disabled_by_default: true
     
   - platform: copy
     name: Marine - Purple Brightness
-    source_id: marine_purple
+    source_id: fluval_marine_purple
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -135,12 +135,12 @@ sensor:
     zero_if_off: true
     name: "Marine - Cold White"
     icon: mdi:lightbulb-outline
-    id: marine_cold_white
+    id: fluval_marine_cold_white
     disabled_by_default: true
     
   - platform: copy
     name: Marine - Cold White Brightness
-    source_id: marine_cold_white
+    source_id: fluval_marine_cold_white
     unit_of_measurement: '%'
     filters:
       - calibrate_linear:
@@ -195,27 +195,32 @@ number:
     name: "Marine - Pink"
     channel: 1
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     name: "Marine - Cyan"
     channel: 2
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     name: "Marine - Blue"
     channel: 3
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     name: "Marine - Purple"
     channel: 4
     zero_if_off: true
+    step: 10
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     name: "Marine - Cold White"
     channel: 5
     zero_if_off: true
+    step: 10
