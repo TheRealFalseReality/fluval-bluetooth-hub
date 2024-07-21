@@ -47,7 +47,7 @@ button:
     fluval_ble_led_id: fluval_marine
     mode: "MANUAL"
     name: "Marine - Switch to Manual"
-    icon: mdi:lightbulb-alert
+    icon: mdi:lightbulb-alert-outline
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
@@ -59,7 +59,7 @@ button:
     fluval_ble_led_id: fluval_marine
     mode: "PRO"
     name: "Marine - Switch to Pro"
-    icon: mdi:lightbulb-on
+    icon: mdi:lightbulb-on-outline
 
 switch:
   - platform: ble_client
@@ -80,7 +80,7 @@ text_sensor:
     mapping_auto: "Auto"
     mapping_pro: "Pro"
     name: "Marine Fluval Light Mode"
-    icon: mdi:lightbulb-group
+    icon: mdi:lightbulb-group-outline
 
 number:
   - platform: fluval_ble_led
