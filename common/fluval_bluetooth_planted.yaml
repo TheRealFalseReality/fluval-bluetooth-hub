@@ -37,12 +37,12 @@ sensor:
   - platform: ble_rssi
     mac_address: ${mac_address_planted}
     name: Planted Fluval Light Signal
-    id: bluetooth_signal
+    id: bluetooth_signal_planted
     disabled_by_default: True
     entity_category: "diagnostic"
 
   - platform: copy
-    source_id: bluetooth_signal
+    source_id: bluetooth_signal_planted
     name: Marine Fluval Light Signal Strength
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);

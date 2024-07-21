@@ -37,18 +37,18 @@ sensor:
   - platform: ble_rssi
     mac_address: ${mac_address_marine}
     name: Marine Fluval Light Signal
-    id: bluetooth_signal
+    id: bluetooth_signal_marine
     disabled_by_default: True
     entity_category: "diagnostic"
 
   - platform: copy
-    source_id: bluetooth_signal
+    source_id: bluetooth_signal_marine
     name: Marine Fluval Light Signal Strength
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "%"
     entity_category: "diagnostic"
-    
+
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 1
