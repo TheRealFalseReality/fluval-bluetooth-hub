@@ -18,6 +18,7 @@ sensor:
     zero_if_off: true
     name: "Marine - Pink"
     icon: mdi:lightbulb-outline
+    id: marine_pink
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
