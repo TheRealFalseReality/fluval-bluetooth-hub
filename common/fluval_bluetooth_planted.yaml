@@ -71,7 +71,7 @@ switch:
     fluval_ble_led_id: fluval_planted
     name: "Planted Fluval Light"
     restore_mode: RESTORE_DEFAULT_ON
-    icon: mdi:led-strip
+    icon: mdi:flower
 
 text_sensor:
   - platform: fluval_ble_led
