@@ -19,6 +19,18 @@ sensor:
     name: "Marine - Pink"
     icon: mdi:lightbulb-outline
     id: marine_pink
+    disabled_by_default: true
+
+  - platform: copy
+    name: Marine - Pink Brightness
+    source_id: marine_pink
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
@@ -26,6 +38,19 @@ sensor:
     zero_if_off: true
     name: "Marine - Cyan"
     icon: mdi:lightbulb-outline
+    id: marine_cyan
+    disabled_by_default: true
+
+  - platform: copy
+    name: Marine - Cyan Brightness
+    source_id: marine_cyan
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
@@ -33,6 +58,19 @@ sensor:
     zero_if_off: true
     name: "Marine - Blue"
     icon: mdi:lightbulb-outline
+    id: marine_blue
+    disabled_by_default: true
+    
+  - platform: copy
+    name: Marine - Blue Brightness
+    source_id: marine_blue
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
@@ -40,6 +78,19 @@ sensor:
     zero_if_off: true
     name: "Marine - Purple"
     icon: mdi:lightbulb-outline
+    id: marine_purple
+    disabled_by_default: true
+    
+  - platform: copy
+    name: Marine - Purple Brightness
+    source_id: marine_purple
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
@@ -47,6 +98,19 @@ sensor:
     zero_if_off: true
     name: "Marine - Cold White"
     icon: mdi:lightbulb-outline
+    id: marine_cold_white
+    disabled_by_default: true
+    
+  - platform: copy
+    name: Marine - Cold White Brightness
+    source_id: marine_cold_white
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
 button:    
   - platform: fluval_ble_led

@@ -17,30 +17,95 @@ sensor:
     channel: 1
     zero_if_off: true
     name: "Planted - Pink"
+    id: planted_pink
+    disabled_by_default: true
+
+  - platform: copy
+    name: Planted - Pink Brightness
+    source_id: planted_pink
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     channel: 2
     zero_if_off: true
     name: "Planted - Blue"
+    id: planted_blue
+    disabled_by_default: true
+
+  - platform: copy
+    name: Planted - Blue Brightness
+    source_id: planted_blue
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     channel: 3
     zero_if_off: true
     name: "Planted - Cold White"
+    id: planted_cold_white
+    disabled_by_default: true
+
+  - platform: copy
+    name: Planted - Cold White Brightness
+    source_id: planted_cold_white
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     channel: 4
     zero_if_off: true
     name: "Planted - Pure White"
+    id: planted_pure_white
+    disabled_by_default: true
+
+  - platform: copy
+    name: Planted - Pure White Brightness
+    source_id: planted_pure_white
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     channel: 5
     zero_if_off: true
     name: "Planted - Warm White"
+    id: planted_warm_white
+    disabled_by_default: true
+
+  - platform: copy
+    name: Planted - Warm White Brightness
+    source_id: planted_warm_white
+    unit_of_measurement: '%'
+    filters:
+      - calibrate_linear:
+         method: least_squares
+         datapoints:
+          - 0.0 -> 0.0
+          - 1000.0 -> 100.0
 
 button:    
   - platform: fluval_ble_led
