@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         file:
-          - fluval-hub.yaml
+          - fluval_hub.yaml
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4.1.7
