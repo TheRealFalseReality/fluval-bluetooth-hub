@@ -5,6 +5,28 @@ ble_client:
   - mac_address: ${mac_address_marine}
     id: ble_fluval_marine
 
+esp32_ble_tracker:
+  on_ble_advertise:
+    - mac_address:
+        - ${mac_address_marine}
+      then:
+        - lambda: |-
+            ESP_LOGD("ble_adv", "New BLE device");
+            ESP_LOGD("ble_adv", "  address: %s", x.address_str().c_str());
+            ESP_LOGD("ble_adv", "  name: %s", x.get_name().c_str());
+            ESP_LOGD("ble_adv", "  Advertised service UUIDs:");
+            for (auto uuid : x.get_service_uuids()) {
+                ESP_LOGD("ble_adv", "    - %s", uuid.to_string().c_str());
+            }
+            ESP_LOGD("ble_adv", "  Advertised service data:");
+            for (auto data : x.get_service_datas()) {
+                ESP_LOGD("ble_adv", "    - %s: (length %i)", data.uuid.to_string().c_str(), data.data.size());
+            }
+            ESP_LOGD("ble_adv", "  Advertised manufacturer data:");
+            for (auto data : x.get_manufacturer_datas()) {
+                ESP_LOGD("ble_adv", "    - %s: (length %i)", data.uuid.to_string().c_str(), data.data.size());
+            }
+
 fluval_ble_led:
   - ble_client_id: ble_fluval_marine
     time_id: ha_time
@@ -12,6 +34,21 @@ fluval_ble_led:
     id: fluval_marine
 
 sensor:
+  - platform: ble_rssi
+    mac_address: ${mac_address_marine}
+    name: Marine Fluval Light Signal
+    id: bluetooth_signal
+    disabled_by_default: True
+    entity_category: "diagnostic"
+
+  - platform: copy
+    source_id: bluetooth_signal
+    name: Marine Fluval Light Signal Strength
+    filters:
+      - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
+    unit_of_measurement: "%"
+    entity_category: "diagnostic"
+    
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 1
@@ -181,7 +218,4 @@ number:
     fluval_ble_led_id: fluval_marine
     name: "Marine - Cold White"
     channel: 5
-    # max_value: 500
-    # min_value: 200
-    # step: 50
     zero_if_off: true
