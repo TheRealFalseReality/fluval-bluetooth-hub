@@ -17,30 +17,35 @@ sensor:
     channel: 1
     zero_if_off: true
     name: "Marine - Pink"
+    icon: mdi:lightbulb-outline
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 2
     zero_if_off: true
     name: "Marine - Cyan"
+    icon: mdi:lightbulb-outline
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 3
     zero_if_off: true
     name: "Marine - Blue"
+    icon: mdi:lightbulb-outline
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 4
     zero_if_off: true
     name: "Marine - Purple"
+    icon: mdi:lightbulb-outline
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     channel: 5
     zero_if_off: true
     name: "Marine - Cold White"
+    icon: mdi:lightbulb-outline
 
 button:    
   - platform: fluval_ble_led
