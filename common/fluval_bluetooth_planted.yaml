@@ -43,7 +43,7 @@ sensor:
 
   - platform: copy
     source_id: bluetooth_signal_planted
-    name: Marine Fluval Light Signal Strength
+    name: Planted Fluval Light Signal Strength
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "%"
