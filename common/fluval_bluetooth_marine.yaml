@@ -155,21 +155,21 @@ button:
     mode: "MANUAL"
     name: "Marine - Switch to Manual"
     icon: mdi:lightbulb-alert-outline
-    id: switch_manual
+    id: switch_manual_marine
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     mode: "AUTO"
     name: "Marine - Switch to Auto"
     icon: mdi:lightbulb-auto-outline
-    id: switch_auto
+    id: switch_auto_marine
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_marine
     mode: "PRO"
     name: "Marine - Switch to Pro"
     icon: mdi:lightbulb-on-outline
-    id: switch_pro
+    id: switch_pro_marine
 
 switch:
   - platform: ble_client

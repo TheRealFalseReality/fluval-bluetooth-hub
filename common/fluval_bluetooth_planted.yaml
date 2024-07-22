@@ -150,18 +150,21 @@ button:
     mode: "MANUAL"
     name: "Planted - Switch to Manual"
     icon: mdi:lightbulb-alert
+    id: switch_manual_planted
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "AUTO"
     name: "Planted - Switch to Auto"
     icon: mdi:lightbulb-auto
+    id: switch_auto_planted
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
     mode: "PRO"
     name: "Planted - Switch to Pro"
     icon: mdi:lightbulb-on
+    id: switch_pro_planted
 
 switch:
   - platform: ble_client
