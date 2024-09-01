@@ -2,7 +2,7 @@ substitutions:
   # names
   name: "fluval-hub"
   friendly_name: "Fluval Hub"
-  app_version: "24.9.1"
+  app_version: "24.9.2"
 
 packages:
   device_base: !include common/device_base.yaml
