@@ -243,7 +243,6 @@ number:
     fluval_ble_led_id: fluval_marine
     name: "Marine - Blue"
     channel: 3
-    # id: fluval_marine_blue_number
     zero_if_off: true
     step: 10
 
@@ -261,30 +260,28 @@ number:
     zero_if_off: true
     step: 10
 
-# select:
-#   - platform: template
-#     name: "Mode Select"
-#     id: mode_select
-#     # optimistic: true
-#     lambda: return {id(fluval_marine_mode)};
-#     options:
-#       - Manual
-#       - Auto
-#       - Pro
-#     # on_value:
-#     set_action:
-#       then:
-#         - lambda: |-
-#             if (x == "Manual") {
-#               id(switch_manual_marine).press();
-#             }
-#             if (x == "Auto") {
-#               id(switch_auto_marine).press();
-#             }
-#             if (x == "Pro") {
-#               id(switch_pro_marine).press();
-#             }
-#     # initial_option: two
+select:
+  - platform: template
+    name: "Mode Select"
+    id: mode_select
+    # optimistic: true
+    options:
+      - Manual
+      - Auto
+      - Pro
+    lambda: return id(fluval_marine_mode).state;
+    on_value:
+      then:
+        - lambda: |-
+            if (x == "Manual") {
+              id(switch_manual_marine).press();
+            }
+            if (x == "Auto") {
+              id(switch_auto_marine).press();
+            }
+            if (x == "Pro") {
+              id(switch_pro_marine).press();
+            }
 
 # output:
 #   - platform: template
