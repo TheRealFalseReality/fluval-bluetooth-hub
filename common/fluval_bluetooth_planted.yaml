@@ -62,9 +62,9 @@ binary_sensor:
     lambda: |-
       set state = id(fluval_planted_blue) | float;
       if state > 0 
-        return 'on';
+        return true;
       else
-        return 'off';
+        return false;
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_planted
