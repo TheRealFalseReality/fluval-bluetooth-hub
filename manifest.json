@@ -8,7 +8,7 @@
       "chipFamily": "ESP32",
       "ota": {
         "path": "fluval-hub-esp32/fluval-hub-esp32.ota.bin",
-        "md5": "ae57aca66a753c0685cb88d1a9d4dadc"
+        "md5": "b4521c4042f24f0dcc63cd1080e92c82"
       },
       "parts": [
         {
