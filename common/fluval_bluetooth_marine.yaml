@@ -224,8 +224,24 @@ text_sensor:
     icon: mdi:lightbulb-group-outline
     id: fluval_marine_mode
     on_value:
-      then:
-        - component.update: mode_select
+      - lambda: |-
+          if (x == Manual) {
+            auto call = id(fluval_marine_mode_select).make_call();
+            call.set_option("Manual");
+            call.perform();
+          }
+          if (x == Auto) {
+            auto call = id(fluval_marine_mode_select).make_call();
+            call.set_option("Auto");
+            call.perform();
+          }
+          if (x == Pro) {
+            auto call = id(fluval_marine_mode_select).make_call();
+            call.set_option("Pro");
+            call.perform();
+          }
+      # then:
+      #   - component.update: fluval_marine_mode_select
 
 number:
   - platform: fluval_ble_led
@@ -266,7 +282,7 @@ number:
 select:
   - platform: template
     name: "Mode Select"
-    id: mode_select
+    id: fluval_marine_mode_select
     # optimistic: true
     options:
       - Manual
