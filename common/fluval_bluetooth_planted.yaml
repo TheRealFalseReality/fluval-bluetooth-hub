@@ -6,11 +6,10 @@ ble_client:
     id: ble_fluval_planted
     auto_connect: true
     on_connect:
-      - binary_sensor.template.publish:
-          id: planted_connection
-          state: ON
-    on_connect:
       then:
+        - binary_sensor.template.publish:
+            id: planted_connection
+            state: ON
         - lambda: |-
             ESP_LOGD("ble_client_lambda", "Connected to BLE device");
     on_disconnect:
