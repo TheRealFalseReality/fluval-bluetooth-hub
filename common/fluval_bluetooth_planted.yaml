@@ -60,7 +60,8 @@ binary_sensor:
     name: Planted Blue State
     id: planted_blue_state
     lambda: |-
-      if (id(fluval_planted_blue) | float > 0) {
+      float state = id(fluval_planted_blue);
+      if ( state > 0) {
         return true;
       }
       else {
