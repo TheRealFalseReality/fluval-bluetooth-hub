@@ -13,10 +13,10 @@ ble_client:
         - lambda: |-
             ESP_LOGD("ble_client_lambda", "Connected to BLE device");
     on_disconnect:
-      - binary_sensor.template.publish:
-          id: planted_connection
-          state: OFF
       then:
+        - binary_sensor.template.publish:
+            id: planted_connection
+            state: OFF
         - lambda: |-
             ESP_LOGD("ble_client_lambda", "Disconnected from BLE device");
 
