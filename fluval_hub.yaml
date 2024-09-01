@@ -2,7 +2,6 @@ substitutions:
   # names
   name: "fluval-hub"
   friendly_name: "Fluval Hub"
-  # App Version - Updated: 6/2024
   app_version: "24.9.1"
 
 packages:
