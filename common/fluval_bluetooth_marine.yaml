@@ -266,10 +266,7 @@ select:
     name: "Mode Select"
     id: mode_select
     # optimistic: true
-    lambda: |-
-      char state;
-      state = id(fluval_marine_mode);
-      return state;
+    lambda: return {id(fluval_marine_mode)};
     options:
       - Manual
       - Auto
