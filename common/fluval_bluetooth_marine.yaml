@@ -225,17 +225,17 @@ text_sensor:
     id: fluval_marine_mode
     on_value:
       - lambda: |-
-          if (x == Manual) {
+          if (x == "Manual") {
             auto call = id(fluval_marine_mode_select).make_call();
             call.set_option("Manual");
             call.perform();
           }
-          if (x == Auto) {
+          if (x == "Auto") {
             auto call = id(fluval_marine_mode_select).make_call();
             call.set_option("Auto");
             call.perform();
           }
-          if (x == Pro) {
+          if (x == "Pro") {
             auto call = id(fluval_marine_mode_select).make_call();
             call.set_option("Pro");
             call.perform();
