@@ -55,6 +55,8 @@ binary_sensor:
     id: planted_connection
     entity_category: "diagnostic"
     device_class: connectivity
+    lambda: |-
+      return {false};
 
   # TODO?
   # - platform: template
