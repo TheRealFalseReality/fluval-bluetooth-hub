@@ -271,6 +271,7 @@ select:
       - Pro
     lambda: return id(fluval_marine_mode).state;
     on_value:
+    set_action:
       then:
         - lambda: |-
             if (x == "Manual") {
