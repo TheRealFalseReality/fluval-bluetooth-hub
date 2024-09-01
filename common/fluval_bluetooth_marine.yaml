@@ -56,7 +56,7 @@ binary_sensor:
     entity_category: "diagnostic"
     device_class: connectivity
     lambda: |-
-      return {false};
+      return {};
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_marine

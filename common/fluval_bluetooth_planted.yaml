@@ -56,7 +56,7 @@ binary_sensor:
     entity_category: "diagnostic"
     device_class: connectivity
     lambda: |-
-      return {false};
+      return {};
 
   # TODO?
   # - platform: template
