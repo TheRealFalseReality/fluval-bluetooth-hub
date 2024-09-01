@@ -222,6 +222,7 @@ text_sensor:
     mapping_pro: "Pro"
     name: "Marine Fluval Light Mode"
     icon: mdi:lightbulb-group-outline
+    id: fluval_marine_mode
 
 number:
   - platform: fluval_ble_led
@@ -264,7 +265,9 @@ select:
   - platform: template
     name: "Mode Select"
     id: mode_select
-    optimistic: true
+    # optimistic: true
+    lambda: |-
+      return id(fluval_marine_mode);
     options:
       - Manual
       - Auto
