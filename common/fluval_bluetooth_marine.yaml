@@ -223,6 +223,9 @@ text_sensor:
     name: "Marine Fluval Light Mode"
     icon: mdi:lightbulb-group-outline
     id: fluval_marine_mode
+    on_value:
+      then:
+        - component.update: mode_select
 
 number:
   - platform: fluval_ble_led
