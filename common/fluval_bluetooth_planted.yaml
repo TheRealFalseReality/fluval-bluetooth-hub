@@ -56,17 +56,18 @@ binary_sensor:
     entity_category: "diagnostic"
     device_class: connectivity
 
-  - platform: template
-    name: Planted Blue State
-    id: planted_blue_state
-    lambda: |-
-      int state = id(fluval_planted_blue);
-      if ( state > 0) {
-        return true;
-      }
-      else {
-        return false;
-      }
+  # TODO?
+  # - platform: template
+  #   name: Planted Blue State
+  #   id: planted_blue_state
+  #   lambda: |-
+  #     int state = id(fluval_planted_blue);
+  #     if ( state > 0) {
+  #       return true;
+  #     }
+  #     else {
+  #       return false;
+  #     }
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_planted
