@@ -42,6 +42,11 @@ binary_sensor:
     name: "Marine Presence"
     id: marine_presence
     entity_category: "diagnostic"
+    device_class: presence
+
+  - platform: template
+    name: Planted BLE Connected
+    entity_category: "diagnostic"
     device_class: connectivity
 
 fluval_ble_led:
