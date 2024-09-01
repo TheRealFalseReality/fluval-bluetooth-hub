@@ -5,6 +5,14 @@ ble_client:
   - mac_address: ${mac_address_planted}
     id: ble_fluval_planted
     auto_connect: true
+    on_connect:
+      then:
+        - lambda: |-
+            ESP_LOGD("ble_client_lambda", "Connected to BLE device");
+    on_disconnect:
+      then:
+        - lambda: |-
+            ESP_LOGD("ble_client_lambda", "Disconnected from BLE device");
 
 esp32_ble_tracker:
   on_ble_advertise:
@@ -31,7 +39,8 @@ esp32_ble_tracker:
 binary_sensor:
   - platform: ble_presence
     mac_address: ${mac_address_planted}
-    name: "Planted Connection"
+    entity_category: "diagnostic"
+    device_class: connectivity
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_planted
