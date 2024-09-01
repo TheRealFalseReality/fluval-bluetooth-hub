@@ -9,4 +9,4 @@ packages:
   fluval_marine: !include common/fluval_bluetooth_marine.yaml
   # fluval_planted: !include common/fluval_bluetooth_planted.yaml
 
-# web_server: !remove
+web_server: !remove
