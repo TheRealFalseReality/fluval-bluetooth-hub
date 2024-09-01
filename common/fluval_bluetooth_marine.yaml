@@ -55,6 +55,8 @@ binary_sensor:
     id: marine_connection
     entity_category: "diagnostic"
     device_class: connectivity
+    lambda: |-
+      return {false};
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_marine
@@ -240,7 +242,7 @@ number:
     fluval_ble_led_id: fluval_marine
     name: "Marine - Blue"
     channel: 3
-    id: fluval_marine_blue_number
+    # id: fluval_marine_blue_number
     zero_if_off: true
     step: 10
 
@@ -258,16 +260,16 @@ number:
     zero_if_off: true
     step: 10
 
-output:
-  - platform: template
-    id: fluval_marine_blue_output
-    type: float
-    write_action: 
-      - number.set:
-          id: fluval_marine_blue_number
-          value: !lambda return state;
+# output:
+#   - platform: template
+#     id: fluval_marine_blue_output
+#     type: float
+#     write_action: 
+#       - number.set:
+#           id: fluval_marine_blue_number
+#           value: !lambda return state;
 
-light:
-  - platform: monochromatic
-    name: "Kitchen Lights"
-    output: fluval_marine_blue_output
+# light:
+#   - platform: monochromatic
+#     name: "Kitchen Lights"
+#     output: fluval_marine_blue_output
