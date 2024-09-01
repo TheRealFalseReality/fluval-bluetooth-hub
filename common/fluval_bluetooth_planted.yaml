@@ -63,9 +63,9 @@ binary_sensor:
       {% set state = 
       id(fluval_planted_blue) | float %}
       {% if state > 0 %}
-        on
+        return 'on'
       {% else %}
-        off
+        return 'off'
       {%- endif %}
 
 fluval_ble_led:
