@@ -4,6 +4,7 @@ substitutions:
 ble_client:
   - mac_address: ${mac_address_planted}
     id: ble_fluval_planted
+    auto_connect: true
 
 esp32_ble_tracker:
   on_ble_advertise:
@@ -26,6 +27,11 @@ esp32_ble_tracker:
             for (auto data : x.get_manufacturer_datas()) {
                 ESP_LOGD("ble_adv", "    - %s: (length %i)", data.uuid.to_string().c_str(), data.data.size());
             }
+
+binary_sensor:
+  - platform: ble_presence
+    mac_address: ${mac_address_planted}
+    name: "Planted Connection"
 
 fluval_ble_led:
   - ble_client_id: ble_fluval_planted
