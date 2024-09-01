@@ -260,6 +260,26 @@ number:
     zero_if_off: true
     step: 10
 
+select:
+  - platform: template
+    name: "Mode Select"
+    id: mode_select
+    options:
+      - Manual
+      - Auto
+      - Pro
+    lambda:
+      if (x == "Manual") {
+        id(switch_manual_marine).press();
+      }
+      if (x == "Auto") {
+        id(switch_auto_marine).press();
+      }
+      if (x == "Pro") {
+        id(switch_pro_marine).press();
+      }
+    # initial_option: two
+
 # output:
 #   - platform: template
 #     id: fluval_marine_blue_output
