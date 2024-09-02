@@ -270,8 +270,8 @@ number:
 
 select:
   - platform: template
-    name: "Marine Mode Select"
-    id: fluval_marine_mode_select
+    name: "Planted Mode Select"
+    id: fluval_planted_mode_select
     # optimistic: true
     update_interval: 1s
     icon: mdi:auto-mode
@@ -279,17 +279,17 @@ select:
       - Manual
       - Auto
       - Pro
-    lambda: return id(fluval_marine_mode).state;
+    lambda: return id(fluval_planted_mode).state;
     # on_value:
     set_action:
       then:
         - lambda: |-
             if (x == "Manual") {
-              id(switch_manual_marine).press();
+              id(switch_manual_planted).press();
             }
             if (x == "Auto") {
-              id(switch_auto_marine).press();
+              id(switch_auto_planted).press();
             }
             if (x == "Pro") {
-              id(switch_pro_marine).press();
+              id(switch_pro_planted).press();
             }
