@@ -272,7 +272,7 @@ select:
   - platform: template
     name: "Planted Mode Select"
     id: fluval_planted_mode_select
-    update_interval: 1s
+    # update_interval: 1s
     icon: mdi:auto-mode
     options:
       - Manual
@@ -285,7 +285,7 @@ select:
         return 1;
       if (id(fluval_planted_mode) == "Pro")
         return 2;
-    return id(fluval_planted_mode).state;
+    # return id(fluval_planted_mode).state;
     # on_value:
     set_action:
       then:

@@ -240,8 +240,8 @@ text_sensor:
     #         call.set_option("Pro");
     #         call.perform();
     #       }
-      # then:
-      #   - component.update: fluval_marine_mode_select
+      then:
+        - component.update: fluval_marine_mode_select
 
 number:
   - platform: fluval_ble_led
@@ -284,13 +284,19 @@ select:
     name: "Marine Mode Select"
     id: fluval_marine_mode_select
     # optimistic: true
-    update_interval: 1s
+    # update_interval: 1s
     icon: mdi:auto-mode
     options:
       - Manual
       - Auto
       - Pro
-    lambda: return id(fluval_marine_mode).state;
+    lambda: |-
+      if (id(fluval_marine_mode) == "Manual")
+        return 0;
+      if (id(fluval_marine_mode) == "Auto")
+        return 1;
+      if (id(fluval_marine_mode) == "Pro")
+        return 2;
     # on_value:
     set_action:
       then:
