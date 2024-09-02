@@ -265,7 +265,7 @@ select:
     name: "Marine Mode Select"
     id: fluval_marine_mode_select
     update_interval: 1s
-    # optimistic: true
+    optimistic: true
     icon: mdi:auto-mode
     options:
       - Manual
