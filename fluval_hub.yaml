@@ -6,7 +6,7 @@ substitutions:
 
 packages:
   device_base: !include common/device_base.yaml
-  fluval_marine: !include common/fluval_bluetooth_marine.yaml
+  # fluval_marine: !include common/fluval_bluetooth_marine.yaml
   # fluval_planted: !include common/fluval_bluetooth_planted.yaml
 
 web_server: !remove
