@@ -284,27 +284,12 @@ select:
     name: "Marine Mode Select"
     id: fluval_marine_mode_select
     optimistic: true
-    # update_interval: 1s
     icon: mdi:auto-mode
     options:
       - Manual
       - Auto
       - Pro
-    # lambda: |-
-    #   if (id(fluval_marine_mode).state == "Manual") {
-    #     return {"Manual"};
-    #   }
-    #   if (id(fluval_marine_mode).state == "Auto") {
-    #     return {"Auto"};
-    #   }
-    #   if (id(fluval_marine_mode).state == "Pro") {
-    #     return {"Pro"};
-    #   }
-    #   else {
-    #     return {};
-    #   }
     on_value:
-    # set_action:
       then:
         - lambda: |-
             if (x == "Manual") {
