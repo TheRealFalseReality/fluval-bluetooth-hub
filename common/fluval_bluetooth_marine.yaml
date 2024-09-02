@@ -222,26 +222,7 @@ text_sensor:
     mapping_pro: "Pro"
     name: "Marine Fluval Light Mode"
     icon: mdi:lightbulb-group-outline
-    # id: fluval_marine_mode
-    # on_value:
-    #   then:
-    #     - component.update: fluval_marine_mode_select
-    #   - lambda: |-
-    #       if (x == "Manual") {
-    #         auto call = id(fluval_marine_mode_select).make_call();
-    #         call.set_option("Manual");
-    #         call.perform();
-    #       }
-    #       if (x == "Auto") {
-    #         auto call = id(fluval_marine_mode_select).make_call();
-    #         call.set_option("Auto");
-    #         call.perform();
-    #       }
-    #       if (x == "Pro") {
-    #         auto call = id(fluval_marine_mode_select).make_call();
-    #         call.set_option("Pro");
-    #         call.perform();
-    #       }
+    id: fluval_marine_mode
 
 number:
   - platform: fluval_ble_led
@@ -283,13 +264,16 @@ select:
   - platform: template
     name: "Marine Mode Select"
     id: fluval_marine_mode_select
-    optimistic: true
+    update_interval: 1s
+    # optimistic: true
     icon: mdi:auto-mode
     options:
       - Manual
       - Auto
       - Pro
-    on_value:
+    lambda: return id(fluval_marine_mode).state;
+    # on_value:
+    set_action:
       then:
         - lambda: |-
             if (x == "Manual") {
