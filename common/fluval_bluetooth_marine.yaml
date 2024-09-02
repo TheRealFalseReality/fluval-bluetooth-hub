@@ -300,6 +300,9 @@ select:
       if (id(fluval_marine_mode).state == "Pro") {
         return {"Pro"};
       }
+      else {
+        return {};
+      }
     # on_value:
     set_action:
       then:

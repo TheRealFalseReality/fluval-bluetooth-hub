@@ -291,6 +291,9 @@ select:
       if (id(fluval_planted_mode).state == "Pro") {
         return {"Pro"};
       }
+      else {
+        return {};
+      }
     # return id(fluval_planted_mode).state;
     # on_value:
     set_action:
