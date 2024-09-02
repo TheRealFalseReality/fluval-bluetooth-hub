@@ -283,13 +283,13 @@ select:
       - Pro
     lambda: |-
       if (id(fluval_planted_mode).state == "Manual") {
-        return 0;
+        return "Manual";
       }
       if (id(fluval_planted_mode).state == "Auto") {
-        return 1;
+        return "Auto";
       }
       if (id(fluval_planted_mode).state == "Pro") {
-        return 2;
+        return "Pro";
       }
     # return id(fluval_planted_mode).state;
     # on_value:
