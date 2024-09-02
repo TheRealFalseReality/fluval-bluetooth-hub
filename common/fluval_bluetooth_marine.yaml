@@ -222,7 +222,7 @@ text_sensor:
     mapping_pro: "Pro"
     name: "Marine Fluval Light Mode"
     icon: mdi:lightbulb-group-outline
-    id: fluval_marine_mode
+    # id: fluval_marine_mode
     # on_value:
     #   then:
     #     - component.update: fluval_marine_mode_select
@@ -279,43 +279,43 @@ number:
     zero_if_off: true
     step: 10
 
-select:
-  - platform: template
-    name: "Marine Mode Select"
-    id: fluval_marine_mode_select
-    # optimistic: true
-    # update_interval: 1s
-    icon: mdi:auto-mode
-    options:
-      - Manual
-      - Auto
-      - Pro
-    lambda: |-
-      if (id(fluval_marine_mode).state == "Manual") {
-        return {"Manual"};
-      }
-      if (id(fluval_marine_mode).state == "Auto") {
-        return {"Auto"};
-      }
-      if (id(fluval_marine_mode).state == "Pro") {
-        return {"Pro"};
-      }
-      else {
-        return {};
-      }
-    # on_value:
-    set_action:
-      then:
-        - lambda: |-
-            if (x == "Manual") {
-              id(switch_manual_marine).press();
-            }
-            if (x == "Auto") {
-              id(switch_auto_marine).press();
-            }
-            if (x == "Pro") {
-              id(switch_pro_marine).press();
-            }
+# select:
+#   - platform: template
+#     name: "Marine Mode Select"
+#     id: fluval_marine_mode_select
+#     # optimistic: true
+#     # update_interval: 1s
+#     icon: mdi:auto-mode
+#     options:
+#       - Manual
+#       - Auto
+#       - Pro
+#     lambda: |-
+#       if (id(fluval_marine_mode).state == "Manual") {
+#         return {"Manual"};
+#       }
+#       if (id(fluval_marine_mode).state == "Auto") {
+#         return {"Auto"};
+#       }
+#       if (id(fluval_marine_mode).state == "Pro") {
+#         return {"Pro"};
+#       }
+#       else {
+#         return {};
+#       }
+#     # on_value:
+#     set_action:
+#       then:
+#         - lambda: |-
+#             if (x == "Manual") {
+#               id(switch_manual_marine).press();
+#             }
+#             if (x == "Auto") {
+#               id(switch_auto_marine).press();
+#             }
+#             if (x == "Pro") {
+#               id(switch_pro_marine).press();
+#             }
 
 # output:
 #   - platform: template

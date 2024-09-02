@@ -230,7 +230,7 @@ text_sensor:
     mapping_pro: "Pro"
     name: "Planted Fluval Light Mode"
     icon: mdi:lightbulb-group
-    id: fluval_planted_mode
+    # id: fluval_planted_mode
     # on_value:
     #   then:
     #     - component.update: fluval_marine_mode_select
@@ -271,40 +271,40 @@ number:
     zero_if_off: true
     step: 10
 
-select:
-  - platform: template
-    name: "Planted Mode Select"
-    id: fluval_planted_mode_select
-    # update_interval: 1s
-    icon: mdi:auto-mode
-    options:
-      - Manual
-      - Auto
-      - Pro
-    lambda: |-
-      if (id(fluval_planted_mode).state == "Manual") {
-        return {"Manual"};
-      }
-      if (id(fluval_planted_mode).state == "Auto") {
-        return {"Auto"};
-      }
-      if (id(fluval_planted_mode).state == "Pro") {
-        return {"Pro"};
-      }
-      else {
-        return {};
-      }
-    # return id(fluval_planted_mode).state;
-    # on_value:
-    set_action:
-      then:
-        - lambda: |-
-            if (x == "Manual") {
-              id(switch_manual_planted).press();
-            }
-            if (x == "Auto") {
-              id(switch_auto_planted).press();
-            }
-            if (x == "Pro") {
-              id(switch_pro_planted).press();
-            }
+# select:
+#   - platform: template
+#     name: "Planted Mode Select"
+#     id: fluval_planted_mode_select
+#     # update_interval: 1s
+#     icon: mdi:auto-mode
+#     options:
+#       - Manual
+#       - Auto
+#       - Pro
+#     lambda: |-
+#       if (id(fluval_planted_mode).state == "Manual") {
+#         return {"Manual"};
+#       }
+#       if (id(fluval_planted_mode).state == "Auto") {
+#         return {"Auto"};
+#       }
+#       if (id(fluval_planted_mode).state == "Pro") {
+#         return {"Pro"};
+#       }
+#       else {
+#         return {};
+#       }
+#     # return id(fluval_planted_mode).state;
+#     # on_value:
+#     set_action:
+#       then:
+#         - lambda: |-
+#             if (x == "Manual") {
+#               id(switch_manual_planted).press();
+#             }
+#             if (x == "Auto") {
+#               id(switch_auto_planted).press();
+#             }
+#             if (x == "Pro") {
+#               id(switch_pro_planted).press();
+#             }
