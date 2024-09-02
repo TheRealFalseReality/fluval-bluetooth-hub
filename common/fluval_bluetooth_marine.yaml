@@ -223,9 +223,9 @@ text_sensor:
     name: "Marine Fluval Light Mode"
     icon: mdi:lightbulb-group-outline
     id: fluval_marine_mode
-    on_value:
-      then:
-        - component.update: fluval_marine_mode_select
+    # on_value:
+    #   then:
+    #     - component.update: fluval_marine_mode_select
     #   - lambda: |-
     #       if (x == "Manual") {
     #         auto call = id(fluval_marine_mode_select).make_call();

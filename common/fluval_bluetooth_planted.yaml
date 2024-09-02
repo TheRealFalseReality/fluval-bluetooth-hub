@@ -231,9 +231,9 @@ text_sensor:
     name: "Planted Fluval Light Mode"
     icon: mdi:lightbulb-group
     id: fluval_planted_mode
-    on_value:
-      then:
-        - component.update: fluval_marine_mode_select
+    # on_value:
+    #   then:
+    #     - component.update: fluval_marine_mode_select
 
 number:
   - platform: fluval_ble_led
