@@ -292,13 +292,13 @@ select:
       - Pro
     lambda: |-
       if (id(fluval_marine_mode).state == "Manual") {
-        return "Manual";
+        return {"Manual"};
       }
       if (id(fluval_marine_mode).state == "Auto") {
-        return "Auto";
+        return {"Auto"};
       }
       if (id(fluval_marine_mode).state == "Pro") {
-        return "Pro";
+        return {"Pro"};
       }
     # on_value:
     set_action:
