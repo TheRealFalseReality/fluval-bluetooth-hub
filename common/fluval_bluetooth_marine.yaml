@@ -281,7 +281,7 @@ number:
 
 select:
   - platform: template
-    name: "Mode Select"
+    name: "Marine Mode Select"
     id: fluval_marine_mode_select
     # optimistic: true
     update_interval: 1s
