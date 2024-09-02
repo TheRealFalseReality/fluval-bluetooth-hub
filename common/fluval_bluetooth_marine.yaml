@@ -283,7 +283,7 @@ select:
   - platform: template
     name: "Marine Mode Select"
     id: fluval_marine_mode_select
-    # optimistic: true
+    optimistic: true
     # update_interval: 1s
     icon: mdi:auto-mode
     options:
