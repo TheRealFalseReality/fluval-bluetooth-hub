@@ -80,14 +80,14 @@ fluval_ble_led:
 sensor:
   - platform: ble_rssi
     mac_address: ${mac_address_planted}
-    name: Planted Fluval Light Signal
+    name: Planted Light Signal
     id: bluetooth_signal_planted
     disabled_by_default: True
     entity_category: "diagnostic"
 
   - platform: copy
     source_id: bluetooth_signal_planted
-    name: Planted Fluval Light Signal Strength
+    name: Planted Light Signal Strength
     filters:
       - lambda: return min(max(2 * (x + 100.0), 0.0), 100.0);
     unit_of_measurement: "%"
@@ -218,7 +218,7 @@ switch:
 
   - platform: fluval_ble_led
     fluval_ble_led_id: fluval_planted
-    name: "Planted Fluval Light"
+    name: "Planted Light"
     restore_mode: RESTORE_DEFAULT_ON
     icon: mdi:flower
 
@@ -228,7 +228,7 @@ text_sensor:
     mapping_manual: "Manual"
     mapping_auto: "Auto"
     mapping_pro: "Pro"
-    name: "Planted Fluval Light Mode"
+    name: "Planted Light Mode"
     icon: mdi:lightbulb-group
     id: fluval_planted_mode
 
