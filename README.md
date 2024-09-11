@@ -21,7 +21,7 @@ packages:
     file: common/fluval_bluetooth_planted.yaml
     refresh: 1h
 
-  # Debug (Uncomment to Add)
+  # Debug (Optional, Uncomment to Add)
   # TheRealFalseReality.dht: github://TheRealFalseReality/aquapi/common/dht.yaml@main
 
   # DHT (Optional, why not?)
