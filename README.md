@@ -10,16 +10,9 @@ substitutions:
   # dhtPin: '25'
 
 packages:
-  TheRealFalseReality.fluval_marine:
-    url: https://github.com/TheRealFalseReality/fluval-bluetooth-hub
-    ref: main
-    file: common/fluval_bluetooth_marine.yaml
-    refresh: 1h
-  TheRealFalseReality.fluval_planted:
-    url: https://github.com/TheRealFalseReality/fluval-bluetooth-hub
-    ref: main
-    file: common/fluval_bluetooth_planted.yaml
-    refresh: 1h
+  # Add Either or Both
+  TheRealFalseReality.fluval_hub_marine: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_marine.yaml@main
+  TheRealFalseReality.fluval_hub_planted: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_planted.yaml@
 
   # Debug (Optional, Uncomment to Add)
   # TheRealFalseReality.dht: github://TheRealFalseReality/aquapi/common/dht.yaml@main
