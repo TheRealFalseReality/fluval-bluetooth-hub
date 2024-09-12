@@ -12,7 +12,7 @@ substitutions:
 packages:
   # Add Either or Both
   TheRealFalseReality.fluval_hub_marine: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_marine.yaml@main
-  TheRealFalseReality.fluval_hub_planted: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_planted.yaml@
+  TheRealFalseReality.fluval_hub_planted: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_planted.yaml@main
 
   # Debug (Optional, Uncomment to Add)
   # TheRealFalseReality.dht: github://TheRealFalseReality/aquapi/common/dht.yaml@main
