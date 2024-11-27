@@ -1,20 +1,43 @@
 name: CI
 
 on:
+  push:
+  workflow_dispatch:
   pull_request:
+    paths:
+      - '*.yaml'
+      - '.github/workflows/ci.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 
 jobs:
   ci:
-    name: Building ${{ matrix.file }}
+    name: Building ${{ matrix.file }} / ${{ matrix.esphome-version }}
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
+      max-parallel: 3
       matrix:
+        #### Modify below here to match your project ####
         file:
-          - fluval_hub.yaml
+          - fluval_hub
+
+        esphome-version:
+          - stable
+          - beta
+          - dev
     steps:
       - name: Checkout source code
         uses: actions/checkout@v4.1.7
-      - name: Build ESPHome firmware to verify configuration
-        uses: esphome/build-action@v3.2.0
+      - name: ESPHome ${{ matrix.esphome-version }}
+        uses: esphome/build-action@v4.0.3
         with:
-          yaml_file: ${{ matrix.file }}
+          yaml-file: ${{ matrix.file }}.yaml
+          version: ${{ matrix.esphome-version }}
+      - name: ESPHome ${{ matrix.esphome-version }} Factory
+        uses: esphome/build-action@v4.0.3
+        with:
+          yaml-file: ${{ matrix.file }}.factory.yaml
+          version: ${{ matrix.esphome-version }}
