@@ -28,7 +28,7 @@ sensor:
 text_sensor:
   - platform: debug
     device:
-      # name: "Device Info"
+      name: "Device Info"
       # web_server:
       #   sorting_group_id: sorting_group_debug
     reset_reason:
