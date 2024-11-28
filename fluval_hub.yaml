@@ -2,10 +2,11 @@ substitutions:
   # names
   name: "fluval-hub"
   friendly_name: "Fluval Hub"
-  app_version: "24.11.0"
+  app_version: "24.11.1"
 
 packages:
   device_base: !include common/device_base.yaml
+  ota_https: !include common/ota_https.yaml
   # fluval_marine: !include common/fluval_bluetooth_marine.yaml
   # fluval_planted: !include common/fluval_bluetooth_planted.yaml
   # debug: !include common/debug.yaml
