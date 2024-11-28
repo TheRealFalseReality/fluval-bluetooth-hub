@@ -15,10 +15,10 @@ packages:
   TheRealFalseReality.fluval_hub_planted: github://TheRealFalseReality/fluval-bluetooth-hub/common/fluval_bluetooth_planted.yaml@main
 
   # Debug (Optional, Uncomment to Add)
-  # TheRealFalseReality.dht: github://TheRealFalseReality/aquapi/common/dht.yaml@main
+  # TheRealFalseReality.debug: github://TheRealFalseReality/fluval-bluetooth-hub/common/debug.yaml@main
 
   # DHT (Optional, why not?)
-  # TheRealFalseReality.dht: github://TheRealFalseReality/aquapi/common/dht.yaml@main
+  # TheRealFalseReality.dht: github://TheRealFalseReality/fluval-bluetooth-hub/common/dht.yaml@main
 ```
 
 [ESPHome Documentation](https://deploy-preview-2653--esphome.netlify.app/components/fluval_ble_led.html)
