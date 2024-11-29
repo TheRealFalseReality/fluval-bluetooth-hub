@@ -6,7 +6,7 @@ substitutions:
 
 packages:
   device_base: !include common/device_base.yaml
-  ota_https: !include common/ota_https.yaml
+  # ota_https: !include common/ota_https.yaml
   # fluval_marine: !include common/fluval_bluetooth_marine.yaml
   # fluval_planted: !include common/fluval_bluetooth_planted.yaml
   # debug: !include common/debug.yaml
