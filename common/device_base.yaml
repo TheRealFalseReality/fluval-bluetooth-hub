@@ -12,6 +12,9 @@ esphome:
   # Automatically add the mac address to the name
   name_add_mac_suffix: true
   comment: "${comment}"
+  project:
+    name: therealfalsereality.fluval-bluetooth-hub
+    version: "${app_version}"
 
 esp32:
   board: esp32dev
