@@ -139,6 +139,18 @@ text_sensor:
       return {"${app_version}"};
     entity_category: "diagnostic"
 
+  # GitHub Project URL
+  - platform: template
+    name: GitHub
+    id: github
+    icon: mdi:github
+    update_interval: '365days'
+    lambda: |-
+      return {"github.com/TheRealFalseReality/fluval-bluetooth-hub"};
+    entity_category: "diagnostic"
+    web_server:
+      sorting_group_id: sorting_group_diagnostic
+
 button:
   # Soft Restart
   - platform: restart
