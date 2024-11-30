@@ -148,8 +148,6 @@ text_sensor:
     lambda: |-
       return {"github.com/TheRealFalseReality/fluval-bluetooth-hub"};
     entity_category: "diagnostic"
-    web_server:
-      sorting_group_id: sorting_group_diagnostic
 
 button:
   # Soft Restart
