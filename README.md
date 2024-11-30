@@ -1,6 +1,7 @@
 # Fluval Bluetooth Hub
 
 By default, it does not build with any light config. In your ESPHome yaml config file, add the following to add either, or both, the `Marine` or `Planted` configuration.
+Also, because BLE takes a lot of memory, the `web_server` is also disabled among other things. The base config is quite bare to allow for up to 2 lights to be supported on one device.
 
 ```
 substitutions:
